@@ -8,10 +8,9 @@ function AddNotes() {
 
   const handleOnChange = (e) => {
     setNoteName(e.target.value);
-    console.log(noteName);
   };
 
-  const handleClick = (noteName) => {
+  const handleClick = () => {
     dispatch(getNotesValue(noteName));
   };
 
@@ -20,7 +19,7 @@ function AddNotes() {
       <h1>Add New Note</h1>
       <div className="new-note-div">
         <input placeholder="New Note" onChange={handleOnChange} />
-        <button onClick={handleClick(noteName)}>Submit</button>
+        <button onClick={handleClick}>Submit</button>
       </div>
     </div>
   );
