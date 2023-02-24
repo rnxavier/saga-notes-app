@@ -1,1 +1,3 @@
-export const GET_NOTE_VALUE = "GET_NOTE_VALUE";
+export const INIT_SAVE_NOTE = "INIT_SAVE_NOTE";
+export const SAVE_NOTE_SUCCESS = "SAVE_NOTE_SUCCESS";
+export const SAVE_NOTE_FAILED = "SAVE_NOTE_FAILED";

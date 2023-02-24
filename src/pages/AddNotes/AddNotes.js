@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getNotesValue } from "./redux/actions";
+import { initSaveNote } from "./redux/actions";
 
 function AddNotes() {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function AddNotes() {
   };
 
   const handleClick = () => {
-    dispatch(getNotesValue(noteName));
+    dispatch(initSaveNote(noteName));
   };
 
   return (

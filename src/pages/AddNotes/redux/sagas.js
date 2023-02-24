@@ -2,13 +2,13 @@
 // call is used to call the api
 
 import { takeEvery, put, call } from "redux-saga/effects";
-import { GET_NOTE_VALUE } from "./actionTypes";
+import { INIT_SAVE_NOTE } from "./actionTypes";
 
 // pass a parameter to get the value from action to saga
-function* getNotesSaga(action) {
-  yield console.log(action.noteValue);
+function* saveNoteSaga(action) {
+  yield console.log(action);
 }
 
 export default function* addNotesSaga() {
-  yield takeEvery(GET_NOTE_VALUE, getNotesSaga);
+  yield takeEvery(INIT_SAVE_NOTE, saveNoteSaga);
 }
