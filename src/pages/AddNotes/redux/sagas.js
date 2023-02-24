@@ -9,5 +9,3 @@ function* getNotesSaga() {}
 export default function* addNotesSaga() {
   yield takeEvery(GET_NOTE_VALUE, getNotesSaga);
 }
-
-//make notes of cycle from video 12
