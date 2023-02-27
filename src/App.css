@@ -45,4 +45,10 @@
   background-color: black;
   color: white;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.new-note-div button:disabled {
+  color: grey;
+  cursor: not-allowed;
 }
