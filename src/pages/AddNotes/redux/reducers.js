@@ -5,7 +5,7 @@ const initialState = {
   failed: false,
 };
 
-export const addNotesReducer = (state = initialState, action) => {
+const addNotesReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_NOTE_SUCCESS:
       console.log(action);
@@ -22,3 +22,5 @@ export const addNotesReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default addNotesReducer;

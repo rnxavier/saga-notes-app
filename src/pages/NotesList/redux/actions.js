@@ -15,9 +15,10 @@ export const fetchingNotes = () => {
     type: FETCHING_NOTES,
   };
 };
-export const fetchingNotesSuccess = () => {
+export const fetchingNotesSuccess = (notesList) => {
   return {
     type: FETCHING_NOTES_SUCCESS,
+    notesList,
   };
 };
 export const fetchingNotesFailed = () => {

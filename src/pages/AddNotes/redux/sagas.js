@@ -8,10 +8,6 @@ import { saveNoteFailed, saveNoteSuccess } from "./actions";
 
 // pass action parameter to get the value from action to saga
 function* saveNoteSaga(action) {
-  const noteData = {
-    id: uuidv4(),
-    name: action.noteValue,
-  };
   const dbUrl =
     "https://redux-notes-app-cee1f-default-rtdb.firebaseio.com/notesList.json";
 
@@ -24,7 +20,8 @@ function* saveNoteSaga(action) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          noteData,
+          id: uuidv4(),
+          name: action.noteValue,
         }),
       });
     });
