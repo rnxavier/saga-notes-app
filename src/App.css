@@ -2,16 +2,19 @@
   display: flex;
   justify-content: space-around;
   background-color: black;
-  /* color: white; */
 }
 
 .header-div h2 {
   cursor: pointer;
 }
 
-.notes-list-div h1,
-.add-notes-div h1 {
+.notes-list-div,
+.add-notes-div {
   text-align: center;
+}
+
+.add-notes-div h2 {
+  color: green;
 }
 
 .notes-list-grid {

@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { initSaveNote, saveNoteSuccess } from "./redux/actions";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { initSaveNote } from "./redux/actions";
 
 function AddNotes() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [noteName, setNoteName] = useState("");
+  const [showSubmitMessage, setShowSubmitMessage] = useState(false);
 
   const handleOnChange = (e) => {
     setNoteName(e.target.value);
@@ -14,7 +13,11 @@ function AddNotes() {
 
   const handleClick = () => {
     dispatch(initSaveNote(noteName));
-    navigate("/");
+    setNoteName("");
+    setShowSubmitMessage(true);
+    setTimeout(() => {
+      setShowSubmitMessage(false);
+    }, 3000);
   };
 
   return (
@@ -30,6 +33,7 @@ function AddNotes() {
           Submit
         </button>
       </div>
+      {showSubmitMessage && <h2>Note submitted!</h2>}
     </div>
   );
 }
