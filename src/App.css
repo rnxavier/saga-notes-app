@@ -15,10 +15,10 @@
 }
 
 .notes-list-grid {
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: grid;
   grid-template-columns: auto auto auto;
-  row-gap: 10px;
+  row-gap: 50px;
 }
 
 .new-note-div {

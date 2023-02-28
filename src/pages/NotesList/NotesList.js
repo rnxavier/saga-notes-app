@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { initGetNotes } from "./redux/actions";
+import { initGetNotes, deleteNote } from "./redux/actions";
 import { MdDeleteForever } from "react-icons/md";
 
 function NotesList() {
@@ -8,6 +8,7 @@ function NotesList() {
   //could also be written as
   // const {notesList, isFetching} = useSelector((state) => state.notesListReducer)
   const notesList = useSelector((state) => state.notesListReducer.notesList);
+  console.log(notesList);
   const isFetching = useSelector(
     (state) => state.notesListReducer.fetchingNotes
   );
@@ -29,7 +30,7 @@ function NotesList() {
             <div key={note.id} className="note-card">
               <h2>{note.name}</h2>
               <p>
-                <MdDeleteForever onClick={() => console.log(note.id)} />
+                <MdDeleteForever onClick={() => dispatch(deleteNote())} />
               </p>
             </div>
           ))}

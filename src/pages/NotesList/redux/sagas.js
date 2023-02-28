@@ -1,10 +1,11 @@
 // put is used to put the value into the action, action is dispatched, value goes to the reducer
 // call is used to call the api
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery, put, call, take } from "redux-saga/effects";
 import { fetchingNotesSuccess } from "./actions";
 import axios from "axios";
 
 import {
+  DELETE_NOTE,
   FETCHING_NOTES_FAILED,
   FETCHING_NOTES_SUCCESS,
   INIT_GET_NOTES,
@@ -28,6 +29,11 @@ function* getNotesListSaga() {
   } catch {}
 }
 
+function* deleteNoteSaga() {
+  yield console.log("delete meee");
+}
+
 export default function* notesListSaga() {
   yield takeEvery(INIT_GET_NOTES, getNotesListSaga);
+  yield takeEvery(DELETE_NOTE, deleteNoteSaga);
 }

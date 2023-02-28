@@ -3,6 +3,7 @@ import {
   FETCHING_NOTES_FAILED,
   FETCHING_NOTES_SUCCESS,
   INIT_GET_NOTES,
+  DELETE_NOTE,
 } from "./actionTypes";
 
 export const initGetNotes = () => {
@@ -25,5 +26,12 @@ export const fetchingNotesSuccess = (notesList) => {
 export const fetchingNotesFailed = () => {
   return {
     type: FETCHING_NOTES_FAILED,
+  };
+};
+
+export const deleteNote = (id) => {
+  return {
+    type: DELETE_NOTE,
+    id,
   };
 };
