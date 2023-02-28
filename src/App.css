@@ -34,6 +34,16 @@
   height: 150px;
   padding: 10px;
   text-align: center;
+  text-align: center;
+}
+
+.note-card svg {
+  cursor: pointer;
+  margin-left: 110px;
+  margin-top: 50px;
+  color: red;
+  width: 30px;
+  height: 30px;
 }
 
 .new-note-div input,
