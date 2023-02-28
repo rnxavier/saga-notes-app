@@ -8,7 +8,7 @@ function NotesList() {
 
   const notesList = useSelector((state) => state.notesListReducer.notesList);
 
-  console.log(notesList);
+  // console.log(notesList);
 
   useEffect(() => {
     dispatch(initGetNotes());
