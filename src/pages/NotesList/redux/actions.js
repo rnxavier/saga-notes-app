@@ -22,9 +22,10 @@ export const fetchingNotesSuccess = (notesList) => {
     notesList,
   };
 };
-export const fetchingNotesFailed = () => {
+export const fetchingNotesFailed = (failed) => {
   return {
     type: FETCHING_NOTES_FAILED,
+    failed,
   };
 };
 

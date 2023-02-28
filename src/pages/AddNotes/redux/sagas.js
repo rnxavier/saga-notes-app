@@ -4,7 +4,7 @@
 import { takeEvery, put } from "redux-saga/effects";
 import { INIT_SAVE_NOTE } from "./actionTypes";
 import db from "../../../firebase";
-import { saveNoteSuccess } from "./actions";
+import { saveNoteFailed, saveNoteSuccess } from "./actions";
 
 // pass action parameter to get the value from action to saga
 function* saveNoteSaga(action) {
@@ -15,6 +15,7 @@ function* saveNoteSaga(action) {
     yield put(saveNoteSuccess(true));
   } catch (error) {
     console.log(error);
+    yield put(saveNoteFailed(true));
   }
 }
 
