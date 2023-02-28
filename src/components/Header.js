@@ -24,7 +24,7 @@ function Header() {
       <h2
         onClick={() => notesListClick()}
         style={{
-          color: notesListActive ? "green" : "white",
+          color: notesListActive ? "orange" : "white",
         }}
       >
         Notes List
@@ -32,7 +32,7 @@ function Header() {
       <h2
         onClick={() => addNotesClick()}
         style={{
-          color: addNotesActive ? "green" : "white",
+          color: addNotesActive ? "orange" : "white",
         }}
       >
         Add New Note
