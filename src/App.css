@@ -18,6 +18,7 @@
   justify-content: space-around;
   display: grid;
   grid-template-columns: auto auto auto;
+  row-gap: 10px;
 }
 
 .new-note-div {

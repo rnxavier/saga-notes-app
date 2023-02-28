@@ -16,7 +16,7 @@ export const fetchingNotes = () => {
   };
 };
 export const fetchingNotesSuccess = (notesList) => {
-  console.log(notesList);
+  //   console.log(notesList);
   return {
     type: FETCHING_NOTES_SUCCESS,
     notesList,

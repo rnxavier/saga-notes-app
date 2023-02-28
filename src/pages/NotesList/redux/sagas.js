@@ -22,7 +22,7 @@ function* getNotesListSaga() {
       for (const i in data) {
         notesListArray.push(data[i]);
       }
-      console.log(notesListArray);
+      // console.log(notesListArray);
       yield put({ type: FETCHING_NOTES_SUCCESS, notesList: notesListArray });
     }
   } catch {}
