@@ -3,7 +3,7 @@
 import { takeEvery, put, call, take } from "redux-saga/effects";
 import { fetchingNotesSuccess } from "./actions";
 import axios from "axios";
-import { db } from "../../../firebase";
+import db from "../../../firebase";
 
 import {
   DELETE_NOTE,
@@ -33,8 +33,9 @@ function* getNotesListSaga() {
   }
 }
 
-function* deleteNoteSaga() {
+function* deleteNoteSaga(action) {
   yield console.log("delete meee");
+  db.database().ref(`notesList/${action.noteTitle}`).remove();
   // try {
   //   axios.delete(
   //     `https://redux-notes-app-cee1f-default-rtdb.firebaseio.com/notesList/${key}`

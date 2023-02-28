@@ -29,9 +29,9 @@ export const fetchingNotesFailed = () => {
   };
 };
 
-export const deleteNote = (id) => {
+export const deleteNote = (noteTitle) => {
   return {
     type: DELETE_NOTE,
-    id,
+    noteTitle,
   };
 };

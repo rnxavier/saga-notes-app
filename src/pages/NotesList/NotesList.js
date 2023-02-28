@@ -15,7 +15,7 @@ function NotesList() {
 
   useEffect(() => {
     dispatch(initGetNotes());
-  }, []);
+  }, [notesList]);
 
   if (isFetching) {
     return <div>Loading...</div>;
@@ -30,7 +30,9 @@ function NotesList() {
             <div key={note.noteTitle} className="note-card">
               <h2>{note.noteTitle}</h2>
               <p>
-                <MdDeleteForever onClick={() => dispatch(deleteNote())} />
+                <MdDeleteForever
+                  onClick={() => dispatch(deleteNote(note.noteTitle))}
+                />
               </p>
             </div>
           ))}
