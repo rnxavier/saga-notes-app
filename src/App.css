@@ -27,6 +27,11 @@
   margin-top: 50px;
 }
 
+.notes-list-div h2 {
+  text-align: center;
+  margin-top: 15%;
+}
+
 .note-card {
   background-color: black;
   color: white;
@@ -47,19 +52,30 @@
 }
 
 .new-note-div input,
-.new-note-div button {
+.new-note-div button,
+.notes-list-div button {
   padding: 10px;
   font-size: 20px;
 }
 
-.new-note-div button {
+.new-note-div button,
+.notes-list-div button {
   background-color: black;
   color: white;
   font-weight: 600;
   cursor: pointer;
+  border: none;
+  border-radius: 6px;
 }
 
-.new-note-div button:disabled {
+.new-note-div button:disabled,
+.notes-list-div button:disabled {
   color: grey;
   cursor: not-allowed;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
 }
