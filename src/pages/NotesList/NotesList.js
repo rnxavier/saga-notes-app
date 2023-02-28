@@ -29,12 +29,11 @@ function NotesList() {
     <div className="notes-list-div">
       <h1>Notes List</h1>
       <div className="notes-list-grid">
-        {notesList &&
-          notesList.map((note) => (
-            <div key={note.id} className="note-card">
-              <h2>{note.name}</h2>
-            </div>
-          ))}
+        {notesList.map((note) => (
+          <div key={note.id} className="note-card">
+            <h2>{note.name}</h2>
+          </div>
+        ))}
       </div>
     </div>
   );
