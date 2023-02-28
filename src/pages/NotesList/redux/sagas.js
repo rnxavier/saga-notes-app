@@ -20,17 +20,27 @@ function* getNotesListSaga() {
     if (response && response.status === 200) {
       const { data } = response;
       const notesListArray = [];
+      console.log(data);
       for (const i in data) {
         notesListArray.push(data[i]);
       }
       // console.log(notesListArray);
       yield put({ type: FETCHING_NOTES_SUCCESS, notesList: notesListArray });
     }
-  } catch {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function* deleteNoteSaga() {
   yield console.log("delete meee");
+  try {
+    axios.delete(
+      `https://redux-notes-app-cee1f-default-rtdb.firebaseio.com/notesList/${key}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default function* notesListSaga() {
