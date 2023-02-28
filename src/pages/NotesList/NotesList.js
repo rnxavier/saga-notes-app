@@ -8,7 +8,7 @@ function NotesList() {
   //could also be written as
   // const {notesList, isFetching} = useSelector((state) => state.notesListReducer)
   const notesList = useSelector((state) => state.notesListReducer.notesList);
-  console.log(notesList);
+  // console.log(notesList);
   const isFetching = useSelector(
     (state) => state.notesListReducer.fetchingNotes
   );
@@ -27,8 +27,8 @@ function NotesList() {
       <div className="notes-list-grid">
         {notesList &&
           notesList.map((note) => (
-            <div key={note.id} className="note-card">
-              <h2>{note.name}</h2>
+            <div key={note.noteTitle} className="note-card">
+              <h2>{note.noteTitle}</h2>
               <p>
                 <MdDeleteForever onClick={() => dispatch(deleteNote())} />
               </p>

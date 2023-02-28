@@ -5,7 +5,7 @@ import {
 } from "./actionTypes";
 
 export const initSaveNote = (noteValue) => {
-  console.log(`note value is ${noteValue}`);
+  // console.log(`note value is ${noteValue}`);
   return {
     type: INIT_SAVE_NOTE,
     noteValue,
