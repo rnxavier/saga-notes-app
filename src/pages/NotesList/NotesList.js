@@ -8,7 +8,6 @@ function NotesList() {
   //could also be written as
   // const {notesList, isFetching} = useSelector((state) => state.notesListReducer)
   const notesList = useSelector((state) => state.notesListReducer.notesList);
-  // console.log(notesList);
   const isFetching = useSelector(
     (state) => state.notesListReducer.fetchingNotes
   );

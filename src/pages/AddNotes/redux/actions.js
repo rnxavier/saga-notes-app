@@ -4,11 +4,10 @@ import {
   SAVE_NOTE_FAILED,
 } from "./actionTypes";
 
-export const initSaveNote = (noteValue) => {
-  // console.log(`note value is ${noteValue}`);
+export const initSaveNote = (noteTitle) => {
   return {
     type: INIT_SAVE_NOTE,
-    noteValue,
+    noteTitle,
   };
 };
 export const saveNoteSuccess = (success) => {

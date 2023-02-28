@@ -36,13 +36,6 @@ function* getNotesListSaga() {
 function* deleteNoteSaga(action) {
   yield console.log("delete meee");
   db.database().ref(`notesList/${action.noteTitle}`).remove();
-  // try {
-  //   axios.delete(
-  //     `https://redux-notes-app-cee1f-default-rtdb.firebaseio.com/notesList/${key}`
-  //   );
-  // } catch (error) {
-  //   console.log(error);
-  // }
 }
 
 export default function* notesListSaga() {
