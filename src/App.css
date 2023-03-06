@@ -8,6 +8,12 @@
   cursor: pointer;
 }
 
+.loading-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+
 .notes-list-div,
 .add-notes-div {
   text-align: center;

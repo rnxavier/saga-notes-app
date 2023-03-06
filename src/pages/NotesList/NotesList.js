@@ -2,17 +2,37 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { initGetNotes, deleteNote, deleteAllNotes } from "./redux/actions";
 import { MdDeleteForever } from "react-icons/md";
+import { Puff } from "react-loader-spinner";
 
 function NotesList() {
   const dispatch = useDispatch();
 
   const notesList = useSelector((state) => state.notesListReducer.notesList);
-
-  // console.log(notesList);
+  const status = useSelector(
+    (state) => state.notesListReducer.fetchingNotesList
+  );
+  console.log(status);
 
   useEffect(() => {
     dispatch(initGetNotes());
   }, [notesList]);
+
+  if (status) {
+    return (
+      <div className="loading-div">
+        <Puff
+          height="80"
+          width="80"
+          radius={1}
+          color="orange"
+          ariaLabel="puff-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="notes-list-div">

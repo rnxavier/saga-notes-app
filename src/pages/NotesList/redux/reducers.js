@@ -1,19 +1,25 @@
 import {
-  DELETE_NOTE,
   FETCHING_NOTES_FAILED,
   FETCHING_NOTES_SUCCESS,
+  INIT_GET_NOTES,
 } from "./actionTypes";
 
 const initialState = {
   notesList: [],
+  fetchingNotesList: true,
   fetchingFailed: false,
 };
 
 const notesListReducer = (state = initialState, action) => {
   switch (action.type) {
+    case INIT_GET_NOTES:
+      return {
+        ...state,
+      };
     case FETCHING_NOTES_SUCCESS:
       return {
         ...state,
+        fetchingNotesList: false,
         notesList: action.notesList,
       };
     case FETCHING_NOTES_FAILED:

@@ -16,8 +16,6 @@ function Header() {
     navigate("/");
   };
 
-  console.log(notesListActive);
-
   const navigate = useNavigate();
   return (
     <div className="header-div">
