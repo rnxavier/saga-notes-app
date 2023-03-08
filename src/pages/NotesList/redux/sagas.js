@@ -4,6 +4,7 @@ import { takeEvery, put, call } from "redux-saga/effects";
 import { fetchingNotesFailed } from "./actions";
 import axios from "axios";
 import db from "../../../firebase";
+import { databaseURL } from "../../../firebase";
 
 import {
   DELETE_NOTE,
@@ -14,17 +15,13 @@ import {
 
 function* getNotesListSaga() {
   try {
-    const response = yield call(
-      axios.get,
-      "https://redux-notes-app-cee1f-default-rtdb.firebaseio.com/notesList.json"
-    );
+    const response = yield call(axios.get, databaseURL);
     if (response && response.status === 200) {
       const { data } = response;
       const notesListArray = [];
       for (const i in data) {
         notesListArray.push(data[i]);
       }
-      // console.log(notesListArray);
       yield put({ type: FETCHING_NOTES_SUCCESS, notesList: notesListArray });
     }
   } catch (error) {
